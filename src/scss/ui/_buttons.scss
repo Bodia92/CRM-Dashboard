@@ -1,4 +1,9 @@
-// .btn_base {
-// 	@extend %blue_btn_1;
-// 	@extend %btn_size_1;
-// }
+.btn_active {
+	@extend %btn_color_active;
+	@extend %btn_size_1;
+}
+
+.btn_inactive {
+	@extend %btn_color_inactive;
+	@extend %btn_size_1;
+}

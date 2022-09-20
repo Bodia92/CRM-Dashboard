@@ -1,0 +1,61 @@
+mixin aside
+	aside.aside
+		.aside_in
+			a.aside__logo(href="#")
+					.aside__logo_icon
+						+icon( 'logo', 'icon--size_mod')
+					h2.aside__logo_title Dashboard
+						small v.01
+			nav.aside__menu
+				ul.aside__menu_list
+					li.aside__menu_item
+						a.aside__menu_link(href="#")
+							.aside__menu_icon
+								+icon( 'dashboard', 'icon--size_mod')
+							h3.aside__menu_title Dashboard
+					li.aside__menu_item
+						a.aside__menu_link(href="#")
+							.aside__menu_icon
+								+icon( 'product', 'icon--size_mod')
+							h3.aside__menu_title Product
+							.aside__menu_arrow
+								+icon( 'arrow_sidebar', 'icon--size_mod')
+					li.aside__menu_item
+						a.aside__menu_link(href="#")
+							.aside__menu_icon
+								+icon( 'customers', 'icon--size_mod')
+							h3.aside__menu_title Customers
+							.aside__menu_arrow
+								+icon( 'arrow_sidebar', 'icon--size_mod')
+					li.aside__menu_item
+						a.aside__menu_link(href="#")
+							.aside__menu_icon
+								+icon( 'income', 'icon--size_mod')
+							h3.aside__menu_title Income
+							.aside__menu_arrow
+								+icon( 'arrow_sidebar', 'icon--size_mod')
+					li.aside__menu_item
+						a.aside__menu_link(href="#")
+							.aside__menu_icon
+								+icon( 'promote', 'icon--size_mod')
+							h3.aside__menu_title Promote
+							.aside__menu_arrow
+								+icon( 'arrow_sidebar', 'icon--size_mod')
+					li.aside__menu_item
+						a.aside__menu_link(href="#")
+							.aside__menu_icon
+								+icon( 'help', 'icon--size_mod')
+							h3.aside__menu_title Help
+							.aside__menu_arrow
+								+icon( 'arrow_sidebar', 'icon--size_mod')
+			.aside__user
+				.aside__user_image
+					+picture({
+						img: 'user.png',
+						class: 'aside__user_image_in',
+						img_class: 'aside__user_image_img',
+						alt: 'user image',
+					})
+				.aside__user_content
+					.aside__user_name Evano
+					.aside__user_rank Project Manager

@@ -1,33 +1,35 @@
 //---------------------------------------------fonts
 $font_path: "../fonts/";
-$font_1: 'RobotoCondensed', sans-serif;
-$font_size_base: 1.6rem;
+$font_1: "Poppins", sans-serif;
+$font_size_base: 1.4rem;
 //---------------------------------------------fonts###
 
 //---------------------------------------------colors
 $white: #fff;
 $black: #000;
 
-$color_text_base: $black;
-$color_link_base:#4aa3df;
+$color_text_base: #292d32;
+$color_link_base: #008767;
+$color_link_menu: #9197b3;
 $body_bg: $white;
+$link_bg: #5932ea;
 //---------------------------------------------colors###
 
 //---------------------------------------------z-index
 $z-index: (
-	popup : 101,
-	header : 100,
-	footer : 100
+	popup: 101,
+	header: 100,
+	footer: 100,
 );
 //---------------------------------------------z-index###
 
 //---------------------------------------------layout
-$page_width: 96rem;
+$page_width: 144rem;
 
 //---------------------------------------------layout###
 
 //---------------------------------------------global values
-$gl_radius:.5rem;
+$gl_radius: 0.5rem;
 //---------------------------------------------global values###
 
 //---------------------------------------------media points
@@ -47,7 +49,7 @@ $input_offset: 0 2rem;
 $input_font_size: $font_size_base;
 $input_border_color: #ccc;
 $input_border_color_active: $black;
-$input_placeholder_color: rgba($black, .4);
+$input_placeholder_color: rgba($black, 0.4);
 $input_text_color: $black;
 $input_radius: $gl_radius;
 //---------------------------------------------forms###

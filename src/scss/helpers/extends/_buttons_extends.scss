@@ -9,33 +9,49 @@
 
 	cursor: pointer;
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 	}
 }
 
 //color extends
-%blue_btn_1 {
-	font-weight: 700;
-	color: $white;
-	background-color: $color_link_base;
-	transition: background-color .3s ease;
+%btn_color_active {
+	font-weight: 500;
+	color: #008767;
+	background-color: rgba(22, 192, 152, 0.38);
+	border: 1px solid #00b087;
+	transition: background-color 0.3s ease;
 
 	@include st_btn();
 
 	&:hover {
-		background-color: darken($color_link_base, 10%);
+		background-color: rgba(22, 192, 152, 0.8);
 	}
+}
 
+%btn_color_inactive {
+	font-weight: 500;
+	color: #df0404;
+	letter-spacing: -0.01em;
+	background-color: #ffc5c5;
+	border: 1px solid #df0404;
+	transition: background-color 0.3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background-color: #f56c6c;
+	}
 }
 
 //size extends
 %btn_size_1 {
-	height: 4rem;
-	padding: 0 1.2rem;
+	height: 3rem;
+	padding: 4px 1.2rem;
 
-	line-height: 4rem;
-	font-size: 1.6rem;
+	line-height: 2.1rem;
+	font-size: 1.4rem;
 
 	border-radius: $gl_radius;
 }

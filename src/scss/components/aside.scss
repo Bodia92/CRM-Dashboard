@@ -1,0 +1,140 @@
+@import "ScssHelpers/helpers_all";
+
+.aside {
+	width: 27%;
+	height: 100vh;
+	padding: 3.6rem 2.8rem;
+}
+
+.aside_in {
+	height: 100%;
+	width: 100%;
+	@extend %global_flex_block_column_nowrap_flex-start;
+}
+//----------------------aside logo----------------
+.aside__logo {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+	&:not(:last-child) {
+		margin-bottom: 5.2rem;
+	}
+}
+
+.aside__logo_icon {
+	flex-shrink: 0;
+	width: 3.6rem;
+	height: 3.6rem;
+	@extend %contain_img;
+}
+
+.aside__logo_title {
+	padding-left: 0.8rem;
+	font-weight: 600;
+	font-size: 2.6rem;
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+	color: $black;
+
+	small {
+		padding-left: 4px;
+		font-weight: 500;
+		font-size: 1rem;
+		letter-spacing: -0.01em;
+		color: #838383;
+	}
+}
+
+//----------------------aside logo----------###
+//--------------------aside menu------------
+.aside__menu {
+	width: 100%;
+	margin-bottom: auto;
+}
+
+.aside__menu_list {
+}
+
+.aside__menu_item {
+	padding: 1rem;
+	border-radius: 0.8rem;
+	transition: background 0.3s ease;
+
+	&:not(:last-child) {
+		margin-bottom: 1.8rem;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: $link_bg;
+			.aside__menu_arrow,
+			.aside__menu_title {
+				color: $white;
+			}
+		}
+	}
+}
+
+.aside__menu_link {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+}
+
+.aside__menu_icon {
+	flex-shrink: 0;
+	width: 2.4rem;
+	height: 2.4rem;
+	color: inherit;
+	&:not(:last-child) {
+		margin-right: 1.4rem;
+	}
+}
+
+.aside__menu_title {
+	margin-right: auto;
+	@extend %title_size;
+	color: $color_link_menu;
+	transition: color 0.3s ease;
+}
+
+.aside__menu_arrow {
+	flex-shrink: 0;
+	height: 1rem;
+	width: 1rem;
+	color: inherit;
+}
+
+//--------------------aside menu------###
+// --------------------user-----------
+.aside__user {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+}
+.aside__user_image {
+	flex-shrink: 0;
+	width: 4.2rem;
+	height: 4.2rem;
+	overflow: hidden;
+	border-radius: 50%;
+	&:not(:last-child) {
+		margin-right: 1.2rem;
+	}
+}
+.aside__user_image_in {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.aside__user_image_img {
+	@extend %cover_img;
+}
+.aside__user_name {
+	@extend %title_size;
+	color: $black;
+}
+.aside__user_rank {
+	font-weight: 400;
+	font-size: 1.2rem;
+	line-height: 1.8;
+	letter-spacing: 0.01em;
+
+	color: #757575;
+}
+
+// --------------------user-----------###

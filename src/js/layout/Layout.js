@@ -5,6 +5,7 @@ import { documentReady, pageLoad, onWindowResize } from 'utils';
 
 // ------------------  import components
 import { calcViewportHeight } from '../utils';
+import aside from '../components/aside';
 // ------------------  import components###
 
 export default class Layout {
@@ -16,6 +17,7 @@ export default class Layout {
 	loadFunc() {
 		console.log('layout load');
 		calcViewportHeight();
+		aside();
 	}
 
 	init() {
