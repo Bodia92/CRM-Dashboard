@@ -1,7 +1,10 @@
 include ../templates/mixins/_m_aside
+include ../templates/mixins/_m_customers
+include ../templates/_project_vars
 section.section
 	.section_in
 		.main_section
 			+aside
-		.main_section__content
-			h1.main_section__title Hello Evano 👋🏼,
+			.main_section__content
+				h1.main_section__title Hello Evano 👋🏼,
+				+customers

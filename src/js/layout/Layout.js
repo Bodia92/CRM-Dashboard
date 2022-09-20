@@ -6,6 +6,8 @@ import { documentReady, pageLoad, onWindowResize } from 'utils';
 // ------------------  import components
 import { calcViewportHeight } from '../utils';
 import aside from '../components/aside';
+import mainSection from '../components/mainSection';
+import customers from '../components/customers';
 // ------------------  import components###
 
 export default class Layout {
@@ -18,6 +20,8 @@ export default class Layout {
 		console.log('layout load');
 		calcViewportHeight();
 		aside();
+		mainSection();
+		customers();
 	}
 
 	init() {

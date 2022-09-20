@@ -1,0 +1,46 @@
+mixin customers
+	.customers
+		.customers__top
+			.customers__top_content
+				h2.customers__top_title All Customers
+				.customers__top_subtitle Active Members
+			form.customers__form
+				+form_input({
+					label_class: 'customers__form_label',
+					class: 'customers__form_element',
+					block_class: 'customers__form_input',
+					type: 'search',
+					label: '',
+					placeholder: 'Search',
+					value: '',
+					id: 'search',
+					})
+				a.customers__search(href='#')
+					+icon('search', 'icon--size_mod')
+		.costumers__wrapper
+			ul.costumers__row.costumers__row--mod
+				each title in sample_var
+					li.costumers__row_title= title
+			each item in sample_array
+				ul.costumers__row
+						li.costumers__row_item= item.name
+						li.costumers__row_item= item.company
+						li.costumers__row_item= item.phone
+						li.costumers__row_item= item.email
+						li.costumers__row_item= item.country
+						li.costumers__row_item.costumers__row_item--size_mod
+							if item.active
+								.btn_active= item.active
+							if item.inactive
+								.btn_inactive= item.inactive
+		.costumers__navigator
+			.costumers__navigator_text Showing data 1 to 8 of  256K entries
+			ul.costumers__navigator_dots
+				li.costumers__navigator_dots_item <
+				li.costumers__navigator_dots_item 1
+				li.costumers__navigator_dots_item 2
+				li.costumers__navigator_dots_item 3
+				li.costumers__navigator_dots_item 4
+				li.costumers__navigator_dots_item.costumers__navigator_dots_item--mod  ...
+				li.costumers__navigator_dots_item 40
+				li.costumers__navigator_dots_item >

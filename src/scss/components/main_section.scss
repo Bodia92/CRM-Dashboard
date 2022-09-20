@@ -1,0 +1,19 @@
+@import "ScssHelpers/helpers_all";
+
+.main_section {
+	position: relative;
+	@extend %global_flex_block_row_nowrap_flex-start;
+	background-color: $body_bg;
+}
+
+.main_section__content {
+	width: 100%;
+	padding: 4rem 7rem;
+}
+
+.main_section__title {
+	@extend %h1;
+	&:not(:last-child) {
+		margin-bottom: 5rem;
+	}
+}

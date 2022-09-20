@@ -4,6 +4,7 @@
 	width: 27%;
 	height: 100vh;
 	padding: 3.6rem 2.8rem;
+	background-color: $white;
 }
 
 .aside_in {
@@ -66,6 +67,7 @@
 		&:hover {
 			background: $link_bg;
 			.aside__menu_arrow,
+			.aside__menu_icon,
 			.aside__menu_title {
 				color: $white;
 			}
@@ -81,7 +83,7 @@
 	flex-shrink: 0;
 	width: 2.4rem;
 	height: 2.4rem;
-	color: inherit;
+	color: #9197b3;
 	&:not(:last-child) {
 		margin-right: 1.4rem;
 	}
