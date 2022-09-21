@@ -2,18 +2,37 @@
 
 .main_section {
 	position: relative;
-	@extend %global_flex_block_row_nowrap_flex-start;
+
 	background-color: $body_bg;
+	@include bp($point_4, min) {
+		@include flex_block(row, nowrap, flex-start);
+	}
+	@include bp($point_4 - 1) {
+	}
 }
 
 .main_section__content {
 	width: 100%;
-	padding: 4rem 7rem;
+
+	@include bp($point_1, min) {
+		padding: 4rem 5.8rem;
+	}
+	@include bp($point_1 - 1) {
+		padding: 2rem 2rem;
+	}
 }
 
 .main_section__title {
 	@extend %h1;
-	&:not(:last-child) {
-		margin-bottom: 5rem;
+
+	@include bp($point_4, min) {
+		&:not(:last-child) {
+			margin-bottom: 5rem;
+		}
+	}
+	@include bp($point_4 - 1) {
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+		}
 	}
 }

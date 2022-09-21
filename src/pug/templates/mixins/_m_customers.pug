@@ -22,15 +22,15 @@ mixin customers
 				each title in sample_var
 					li.costumers__row_title= title
 			each item in sample_array
-				ul.costumers__row
+				ul.costumers__row(class= item.mod)
 						li.costumers__row_item
 							a.costumers__row_link(href="#")= item.name
 						li.costumers__row_item
 							a.costumers__row_link(href="#")= item.company
 						li.costumers__row_item
-							a.costumers__row_link(href="tel:item.phone")= item.phone
-						li.costumers__row_item
-							a.costumers__row_link(href="mailto:item.email")= item.email
+							a.costumers__row_link(href="#")= item.phone
+						li.costumers__row_item.costumers__row_item--mod
+							a.costumers__row_link(href="#")= item.email
 						li.costumers__row_item
 							a.costumers__row_link(href="#")= item.country
 						li.costumers__row_item.costumers__row_item--size_mod
@@ -38,6 +38,30 @@ mixin customers
 								.btn_active= item.active
 							if item.inactive
 								.btn_inactive= item.inactive
+
+		.costumers__wrapper_mobile
+			each item in sample_array
+				.costumers__wrapper_mobile_in
+					ul.costumers__row.costumers__row--mod
+						each title in sample_var
+							li.costumers__row_title= title
+					ul.costumers__row
+							li.costumers__row_item
+								a.costumers__row_link(href="#")= item.name
+							li.costumers__row_item
+								a.costumers__row_link(href="#")= item.company
+							li.costumers__row_item
+								a.costumers__row_link(href="#")= item.phone
+							li.costumers__row_item
+								a.costumers__row_link(href="#")= item.email
+							li.costumers__row_item
+								a.costumers__row_link(href="#")= item.country
+							li.costumers__row_item
+								if item.active
+									.btn_active= item.active
+								if item.inactive
+									.btn_inactive= item.inactive
+
 		.costumers__navigator
 			.costumers__navigator_text Showing data 1 to 8 of  256K entries
 			ul.costumers__navigator_dots

@@ -26,3 +26,27 @@
 
 	letter-spacing: -0.01em;
 }
+
+%logo_size {
+	padding-left: 0.8rem;
+	font-weight: 600;
+
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+	color: $black;
+
+	small {
+		padding-left: 4px;
+		font-weight: 500;
+		font-size: 1rem;
+		letter-spacing: -0.01em;
+		color: #838383;
+	}
+
+	@include bp($point_2, min) {
+		font-size: 2.6rem;
+	}
+	@include bp($point_2 - 1) {
+		font-size: 1.8rem;
+	}
+}

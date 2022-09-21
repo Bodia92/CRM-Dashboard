@@ -1,6 +1,8 @@
 mixin aside
 	aside.aside
 		.aside_in
+			button(type='button' aria-label='open/hide menu').aside__menu_trigger.menuTrigger
+				span.aside__menu_trigger_decor
 			a.aside__logo(href="#")
 					.aside__logo_icon
 						+icon( 'logo', 'icon--size_mod')

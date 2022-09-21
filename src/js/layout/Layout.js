@@ -8,6 +8,7 @@ import { calcViewportHeight } from '../utils';
 import aside from '../components/aside';
 import mainSection from '../components/mainSection';
 import customers from '../components/customers';
+import menuTrigger from '../components/menuTrigger';
 // ------------------  import components###
 
 export default class Layout {
@@ -22,6 +23,7 @@ export default class Layout {
 		aside();
 		mainSection();
 		customers();
+		menuTrigger();
 	}
 
 	init() {
