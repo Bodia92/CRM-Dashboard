@@ -80,11 +80,11 @@ body {
 
 a {
 	text-decoration: none;
-	color: $color_link_base;
+	color: $color_text_base;
 
 	&:hover,
 	&:focus {
-		color: $white;
+		color: $grey;
 	}
 }
 

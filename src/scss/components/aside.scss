@@ -1,6 +1,9 @@
 @import "ScssHelpers/helpers_all";
 
 .aside {
+	// position: fixed;
+	// top: 0;
+	// left: 0;
 	width: 27%;
 	height: 100vh;
 	padding: 3.6rem 2.8rem;
@@ -24,6 +27,7 @@
 	flex-shrink: 0;
 	width: 3.6rem;
 	height: 3.6rem;
+	color: $black;
 	@extend %contain_img;
 }
 
@@ -49,9 +53,6 @@
 .aside__menu {
 	width: 100%;
 	margin-bottom: auto;
-}
-
-.aside__menu_list {
 }
 
 .aside__menu_item {
@@ -83,7 +84,8 @@
 	flex-shrink: 0;
 	width: 2.4rem;
 	height: 2.4rem;
-	color: #9197b3;
+	color: $color_link_menu;
+	transition: color 0.3s ease;
 	&:not(:last-child) {
 		margin-right: 1.4rem;
 	}
@@ -100,14 +102,17 @@
 	flex-shrink: 0;
 	height: 1rem;
 	width: 1rem;
-	color: inherit;
+	color: $color_link_menu;
+	transition: color 0.3s ease;
 }
 
 //--------------------aside menu------###
 // --------------------user-----------
+
 .aside__user {
 	@extend %global_flex_block_row_nowrap_flex-start_center;
 }
+
 .aside__user_image {
 	flex-shrink: 0;
 	width: 4.2rem;
@@ -118,19 +123,25 @@
 		margin-right: 1.2rem;
 	}
 }
+
 .aside__user_image_in {
 	display: block;
 	height: 100%;
 	width: 100%;
 }
+
 .aside__user_image_img {
 	@extend %cover_img;
 }
+
 .aside__user_name {
+	display: block;
 	@extend %title_size;
 	color: $black;
 }
+
 .aside__user_rank {
+	display: block;
 	font-weight: 400;
 	font-size: 1.2rem;
 	line-height: 1.8;

@@ -20,7 +20,7 @@ mixin aside
 									.aside__menu_arrow
 										+icon( asideItem.arrow, 'icon--size_mod')
 			.aside__user
-				.aside__user_image
+				a.aside__user_image(href="#")
 					+picture({
 						img: 'user.png',
 						class: 'aside__user_image_in',
@@ -28,5 +28,5 @@ mixin aside
 						alt: 'user image',
 					})
 				.aside__user_content
-					.aside__user_name Evano
-					.aside__user_rank Project Manager
+					a.aside__user_name(href="#") Evano
+					a.aside__user_rank(href="#") Project Manager

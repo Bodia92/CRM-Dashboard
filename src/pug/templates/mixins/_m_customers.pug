@@ -23,11 +23,16 @@ mixin customers
 					li.costumers__row_title= title
 			each item in sample_array
 				ul.costumers__row
-						li.costumers__row_item= item.name
-						li.costumers__row_item= item.company
-						li.costumers__row_item= item.phone
-						li.costumers__row_item= item.email
-						li.costumers__row_item= item.country
+						li.costumers__row_item
+							a.costumers__row_link(href="#")= item.name
+						li.costumers__row_item
+							a.costumers__row_link(href="#")= item.company
+						li.costumers__row_item
+							a.costumers__row_link(href="tel:item.phone")= item.phone
+						li.costumers__row_item
+							a.costumers__row_link(href="mailto:item.email")= item.email
+						li.costumers__row_item
+							a.costumers__row_link(href="#")= item.country
 						li.costumers__row_item.costumers__row_item--size_mod
 							if item.active
 								.btn_active= item.active
