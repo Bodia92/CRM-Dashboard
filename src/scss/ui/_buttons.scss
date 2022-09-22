@@ -1,9 +1,9 @@
-.btn_active {
+.status_active {
 	@extend %btn_color_active;
 	@extend %btn_size_1;
 }
 
-.btn_inactive {
+.status_inactive {
 	@extend %btn_color_inactive;
 	@extend %btn_size_1;
 }

@@ -3,7 +3,7 @@ mixin customers
 		.customers__top
 			.customers__top_content
 				h2.customers__top_title All Customers
-				.customers__top_subtitle Active Members
+				a.customers__top_subtitle(href="#") Active Members
 			form.customers__form
 				+form_input({
 					label_class: 'customers__form_label',
@@ -15,61 +15,64 @@ mixin customers
 					value: '',
 					id: 'search',
 					})
-				a.customers__search(href='#')
+				button.customers__search(type='submit' aria-label='search')
 					+icon('search', 'icon--size_mod')
-		.costumers__wrapper
-			ul.costumers__row.costumers__row--mod
-				each title in sample_var
-					li.costumers__row_title= title
+		ul.costumers__wrapper
+			li.costumers__wrapper_list
+				ul.costumers__row.costumers__row--mod
+					each title in sample_var
+						li.costumers__row_title= title
 			each item in sample_array
-				ul.costumers__row(class= item.mod)
+				li.costumers__wrapper_list
+					ul.costumers__row(class= item.mod)
 						li.costumers__row_item
-							a.costumers__row_link(href="#")= item.name
+							a.costumers__row_item_link(href="#")= item.name
 						li.costumers__row_item
-							a.costumers__row_link(href="#")= item.company
+							a.costumers__row_item_link(href="#")= item.company
 						li.costumers__row_item
-							a.costumers__row_link(href="#")= item.phone
+							a.costumers__row_item_link(href=item.phone.href)= item.phone.title
 						li.costumers__row_item.costumers__row_item--mod
-							a.costumers__row_link(href="#")= item.email
+							a.costumers__row_item_link(href=item.email.href)= item.email.title
 						li.costumers__row_item
-							a.costumers__row_link(href="#")= item.country
-						li.costumers__row_item.costumers__row_item--size_mod
+							a.costumers__row_item_link(href="#")= item.country
+						li.costumers__row_item.costumers__row_item--position_mod
 							if item.active
-								.btn_active= item.active
+								.costumers__row_item_status.costumers__row_item_status--active= item.active
 							if item.inactive
-								.btn_inactive= item.inactive
+								.costumers__row_item_status.costumers__row_item_status--inactive= item.inactive
 
-		.costumers__wrapper_mobile
+		ul.costumers__wrapper_mobile
 			each item in sample_array
-				.costumers__wrapper_mobile_in
-					ul.costumers__row.costumers__row--mod
-						each title in sample_var
-							li.costumers__row_title= title
-					ul.costumers__row
+				li.costumers__wrapper_list
+					.costumers__wrapper_mobile_in
+						ul.costumers__row.costumers__row--mod
+							each title in sample_var
+								li.costumers__row_title= title
+						ul.costumers__row
 							li.costumers__row_item
-								a.costumers__row_link(href="#")= item.name
+								a.costumers__row_item_link(href="#")= item.name
 							li.costumers__row_item
-								a.costumers__row_link(href="#")= item.company
+								a.costumers__row_item_link(href="#")= item.company
 							li.costumers__row_item
-								a.costumers__row_link(href="#")= item.phone
+								a.costumers__row_item_link(href=item.phone.href)= item.phone.title
 							li.costumers__row_item
-								a.costumers__row_link(href="#")= item.email
+								a.costumers__row_item_link(href=item.email.href)= item.email.title
 							li.costumers__row_item
-								a.costumers__row_link(href="#")= item.country
+								a.costumers__row_item_link(href="#")= item.country
 							li.costumers__row_item
 								if item.active
-									.btn_active= item.active
+									.costumers__row_item_status.costumers__row_item_status--active= item.active
 								if item.inactive
-									.btn_inactive= item.inactive
+									.costumers__row_item_status.costumers__row_item_status--inactive= item.inactive
 
 		.costumers__navigator
 			.costumers__navigator_text Showing data 1 to 8 of  256K entries
-			ul.costumers__navigator_dots
-				li.costumers__navigator_dots_item <
-				li.costumers__navigator_dots_item 1
-				li.costumers__navigator_dots_item 2
-				li.costumers__navigator_dots_item 3
-				li.costumers__navigator_dots_item 4
-				li.costumers__navigator_dots_item.costumers__navigator_dots_item--mod  ...
-				li.costumers__navigator_dots_item 40
-				li.costumers__navigator_dots_item >
+			.costumers__navigator_wrapper
+				a.costumers__navigator_arrow.costumers__navigator_arrow--prev_mod(href="#")
+					+icon( 'arrow_sidebar', 'icon--size_mod')
+				ul.costumers__navigator_dots
+					each number in number_array
+						li.costumers__navigator_dots_item
+							a.costumers__navigator_dots_link(href="#")= number
+				a.costumers__navigator_arrow(href="#")
+					+icon( 'arrow_sidebar', 'icon--size_mod')

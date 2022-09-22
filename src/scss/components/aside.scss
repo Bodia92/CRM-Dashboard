@@ -3,14 +3,17 @@
 .aside {
 	position: relative;
 	background-color: $white;
-	@include bp($point_4, min) {
-		width: 27%;
-		height: 100vh;
+	@include bp(1400px, min) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 17%;
+		height: 100%;
 		padding: 3.6rem 2.8rem;
 	}
 
-	@include bp($point_4 - 1) {
-		width: auto;
+	@include bp(1400px - 1) {
+		width: 100%;
 		padding: 2rem 2rem;
 	}
 }
@@ -18,11 +21,11 @@
 .aside_in {
 	height: 100%;
 	width: 100%;
-	@include bp($point_4, min) {
+	@include bp(1400px, min) {
 		@include flex_block(column, nowrap, flex-start, center);
 	}
 
-	@include bp($point_4 - 1) {
+	@include bp(1400px - 1) {
 		@include flex_block(row, nowrap, flex-start, center);
 	}
 }
@@ -30,28 +33,33 @@
 .aside__logo {
 	@extend %global_flex_block_row_nowrap_flex-start_center;
 
-	@include bp($point_4, min) {
+	@include bp(1400px, min) {
 		&:not(:last-child) {
 			margin-bottom: 5.2rem;
 		}
 	}
 
-	@include bp($point_4 - 1) {
+	@include bp(1400px - 1) {
 		margin: 0 auto;
 	}
 }
 
 .aside__logo_icon {
+	@extend %contain_img;
 	flex-shrink: 0;
 
 	color: $black;
-	@extend %contain_img;
-	@include bp($point_4, min) {
+
+	&:not(:last-child) {
+		margin-right: 0.8rem;
+	}
+
+	@include bp(1400px, min) {
 		width: 3.6rem;
 		height: 3.6rem;
 	}
 
-	@include bp($point_4 - 1) {
+	@include bp(1400px - 1) {
 		width: 3rem;
 		height: 3rem;
 	}
@@ -64,11 +72,13 @@
 //----------------------aside logo----------###
 //--------------------aside menu------------
 .aside__menu {
-	@include bp($point_4, min) {
+	@include bp(1400px, min) {
 		width: 100%;
-		margin-bottom: auto;
+		&:not(:last-child) {
+			margin-bottom: 1.4rem;
+		}
 	}
-	@include bp($point_4 - 1) {
+	@include bp(1400px - 1) {
 		position: absolute;
 		top: 8rem;
 		left: 0;
@@ -85,30 +95,20 @@
 			transform: translateX(0);
 		}
 	}
+
+	@include bp($point_5, min) {
+		max-width: 30rem;
+	}
+	@include bp($point_5 - 1) {
+		max-width: 100%;
+	}
 }
 
 .aside__menu_list {
-	@include bp($point_4 - 1) {
-	}
 }
 
 .aside__menu_item {
-	padding: 1rem;
-	border-radius: 0.8rem;
-	transition: background 0.3s ease;
-
-	@media (any-hover: hover) {
-		&:hover {
-			background: $link_bg;
-			.aside__menu_arrow,
-			.aside__menu_icon,
-			.aside__menu_title {
-				color: $white;
-			}
-		}
-	}
-
-	@include bp($point_4, min) {
+	@include bp(1400px, min) {
 		&:not(:last-child) {
 			margin-bottom: 1.8rem;
 		}
@@ -117,35 +117,45 @@
 
 .aside__menu_link {
 	@extend %global_flex_block_row_nowrap_flex-start_center;
+	@extend %title_size;
+
+	color: $color_link_menu;
+	padding: 1rem;
+	border-radius: 0.8rem;
+	@extend %transition_all;
+	@media (any-hover: hover) {
+		&:hover {
+			background: $link_bg;
+			color: $white;
+		}
+	}
 }
 
 .aside__menu_icon {
 	flex-shrink: 0;
 	width: 2.4rem;
 	height: 2.4rem;
-	color: $color_link_menu;
-	transition: color 0.3s ease;
+	color: inherit;
 	&:not(:last-child) {
 		margin-right: 1.4rem;
 	}
 }
 
 .aside__menu_title {
-	margin-right: auto;
 	@extend %title_size;
-	color: $color_link_menu;
-	transition: color 0.3s ease;
-	@include bp($point_4) {
-		// display: none;
-	}
+	margin-right: auto;
+
+	color: inherit;
 }
 
 .aside__menu_arrow {
 	flex-shrink: 0;
 	height: 1rem;
 	width: 1rem;
-	color: $color_link_menu;
-	transition: color 0.3s ease;
+	color: inherit;
+	@include bp($point_5 - 1) {
+		transform: rotate(90deg);
+	}
 }
 
 //--------------------aside menu------###
@@ -153,6 +163,11 @@
 
 .aside__user {
 	@extend %global_flex_block_row_nowrap_flex-start_center;
+
+	@include bp(1400px, min) {
+		width: 100%;
+		margin-top: auto;
+	}
 }
 
 .aside__user_image {
@@ -161,8 +176,11 @@
 	height: 4.2rem;
 	overflow: hidden;
 	border-radius: 50%;
-	&:not(:last-child) {
-		margin-right: 1.2rem;
+
+	@include bp(1400px, min) {
+		&:not(:last-child) {
+			margin-right: 1.2rem;
+		}
 	}
 }
 
@@ -177,14 +195,15 @@
 }
 
 .aside__user_content {
-	@include bp($point_4) {
+	@include bp(1400px) {
 		display: none;
 	}
 }
 
 .aside__user_name {
-	display: block;
 	@extend %title_size;
+	display: block;
+
 	color: $black;
 }
 
@@ -224,12 +243,13 @@
 	color: transparent;
 	cursor: pointer;
 
-	@include bp($point_4 - 1) {
+	@include bp(1400px - 1) {
 		display: block; // appear on tablets
 	}
 
 	&:before {
 		content: "";
+		@extend %transition_all;
 		max-width: 2rem;
 		transform: translateY(-1rem);
 		transition: all 0.3s ease;

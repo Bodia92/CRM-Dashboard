@@ -4,18 +4,18 @@
 	position: relative;
 
 	background-color: $body_bg;
-	@include bp($point_4, min) {
+	@include bp(1400px, min) {
 		@include flex_block(row, nowrap, flex-start);
-	}
-	@include bp($point_4 - 1) {
 	}
 }
 
 .main_section__content {
 	width: 100%;
+	max-width: 102rem;
+	margin: 0 auto;
 
 	@include bp($point_1, min) {
-		padding: 4rem 5.8rem;
+		padding: 4rem 6rem;
 	}
 	@include bp($point_1 - 1) {
 		padding: 2rem 2rem;
@@ -25,12 +25,12 @@
 .main_section__title {
 	@extend %h1;
 
-	@include bp($point_4, min) {
+	@include bp($point_2, min) {
 		&:not(:last-child) {
 			margin-bottom: 5rem;
 		}
 	}
-	@include bp($point_4 - 1) {
+	@include bp($point_2 - 1) {
 		&:not(:last-child) {
 			margin-bottom: 3rem;
 		}
