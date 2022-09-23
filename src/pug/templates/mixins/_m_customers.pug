@@ -41,29 +41,32 @@ mixin customers
 							if item.inactive
 								.costumers__row_item_status.costumers__row_item_status--inactive= item.inactive
 
-		ul.costumers__wrapper_mobile
-			each item in sample_array
-				li.costumers__wrapper_list
-					.costumers__wrapper_mobile_in
-						ul.costumers__row.costumers__row--mod
-							each title in sample_var
-								li.costumers__row_title= title
-						ul.costumers__row
-							li.costumers__row_item
-								a.costumers__row_item_link(href="#")= item.name
-							li.costumers__row_item
-								a.costumers__row_item_link(href="#")= item.company
-							li.costumers__row_item
-								a.costumers__row_item_link(href=item.phone.href)= item.phone.title
-							li.costumers__row_item
-								a.costumers__row_item_link(href=item.email.href)= item.email.title
-							li.costumers__row_item
-								a.costumers__row_item_link(href="#")= item.country
-							li.costumers__row_item
-								if item.active
-									.costumers__row_item_status.costumers__row_item_status--active= item.active
-								if item.inactive
-									.costumers__row_item_status.costumers__row_item_status--inactive= item.inactive
+		ul.costumers__wrapper_mobile_list
+			each itemMob in mobile_array
+				li.costumers__mobile_item
+					ul.costumers__row_mobile_list
+						li.costumers__row_mobile_item
+							.costumers__row_title= itemMob.name.value
+							a.costumers__row_item_link(href="#")= itemMob.name.title
+						li.costumers__row_mobile_item
+							.costumers__row_title= itemMob.company.value
+							a.costumers__row_item_link(href="#")= itemMob.company.title
+						li.costumers__row_mobile_item
+							.costumers__row_title= itemMob.phone.value
+							a.costumers__row_item_link(href=itemMob.phone.href)= itemMob.phone.title
+						li.costumers__row_mobile_item
+							.costumers__row_title= itemMob.email.value
+							a.costumers__row_item_link(href=itemMob.email.href)= itemMob.email.title
+						li.costumers__row_mobile_item
+							.costumers__row_title= itemMob.country.value
+							a.costumers__row_item_link(href="#")= itemMob.country.title
+						li.costumers__row_mobile_item
+							.costumers__row_title= itemMob.status.value
+							if itemMob.status.active == 'true'
+								.costumers__row_item_status.costumers__row_item_status--active= itemMob.status.title
+							if itemMob.status.active == 'false'
+								.costumers__row_item_status.costumers__row_item_status--inactive= itemMob.status.title
+
 
 		.costumers__navigator
 			.costumers__navigator_text Showing data 1 to 8 of  256K entries
